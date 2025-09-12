@@ -1,4 +1,4 @@
-# 🖼️ Image Downloader Chrome Extension
+# <div style="display:flex; "> <img width="40" height="40" alt="icon" src="https://github.com/user-attachments/assets/5fe747b6-f4b9-467c-b732-ef97b899b1d4" /> <p>Image Downloader Chrome Extension </p> </div>
 
 A simple and lightweight Chrome extension that allows users to **download all images** from any webpage, or **select specific images** to download. The images are bundled into a single `.zip` file for easy storage and sharing.
 
