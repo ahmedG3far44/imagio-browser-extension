@@ -49,7 +49,7 @@ Built with **Vanilla JavaScript, HTML, CSS**, and powered by **[JSZip](https://s
 
 
 ### ZIP Download Example
-<p align="center">
+<p align="start">
  <img width="618" height="36" alt="image" src="https://github.com/user-attachments/assets/b910650c-37ed-4951-93b5-9e8724b17529" />
 </p>
 
