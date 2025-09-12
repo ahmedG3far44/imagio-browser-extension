@@ -1,7 +1,7 @@
 {
   "name": "Image-oo Extensions",
-  "description": "Base Level Extension",
-  "version": "1.0",
+  "description": "A Chrome extension to download all images from a webpage by clicking a button.",
+  "version": "1.0.0",
   "manifest_version": 3,
   "permissions": ["storage", "activeTab", "scripting", "downloads"],
   "host_permissions": ["https://*/*", "http://*/*"],
@@ -16,6 +16,6 @@
   ],
   "action": {
     "default_popup": "popup.html",
-    "default_icon": "assets/icon.svg"
+    "default_icon": "/assets/icon.png"
   }
 }

@@ -1,0 +1,181 @@
+body {
+  width: 400px;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.controls {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  flex: 1;
+}
+
+#scanBtn {
+  background: #4caf50;
+  color: white;
+}
+
+#downloadAllBtn {
+  background: #2196f3;
+  color: white;
+}
+
+#downloadSelectedBtn {
+  background: #ff9800;
+  color: white;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+button:disabled {
+  background: #cccccc;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.filter-info {
+  background: #e3f2fd;
+  padding: 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  margin-bottom: 15px;
+  color: #1976d2;
+}
+
+.select-controls {
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#selectAll {
+  margin: 0;
+}
+
+.stats {
+  text-align: center;
+  margin: 10px 0;
+  font-size: 14px;
+  color: #666;
+}
+
+#status {
+  margin: 10px 0;
+  padding: 10px;
+  background: #f5f5f5;
+  border-radius: 4px;
+  font-size: 13px;
+  text-align: center;
+}
+
+.loading {
+  display: none;
+  text-align: center;
+  padding: 20px;
+  color: #666;
+}
+
+.loading.show {
+  display: block;
+}
+
+#imageContainer {
+  max-height: 300px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 10px;
+  display: none;
+}
+
+.image-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 8px;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  background: white;
+}
+
+.image-item:hover {
+  background-color: #f9f9f9;
+}
+
+.image-item input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+.image-item img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-right: 10px;
+  border: 1px solid #ddd;
+}
+
+.image-info {
+  flex: 1;
+  font-size: 12px;
+}
+
+.image-url {
+  word-break: break-all;
+  color: #333;
+  margin-bottom: 2px;
+}
+
+.image-details {
+  color: #666;
+  font-size: 11px;
+}
+
+.extension-badge {
+  background: #4caf50;
+  color: white;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 10px;
+  margin-left: 5px;
+}
+
+.download-progress {
+  background: #fff3cd;
+  border: 1px solid #ffeaa7;
+  padding: 10px;
+  border-radius: 4px;
+  margin-top: 10px;
+  display: none;
+}
+
+.download-progress.show {
+  display: block;
+}
+
+.download-mode {
+  background: #e8f5e8;
+  border: 1px solid #4caf50;
+  padding: 8px;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  font-size: 12px;
+  text-align: center;
+}
