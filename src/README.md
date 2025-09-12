@@ -37,7 +37,8 @@ Built with **Vanilla JavaScript, HTML, CSS**, and powered by **[JSZip](https://s
 ## 📷 Screenshots
 
 ### Popup UI
-*(Add screenshot here)*
+<img width="449" height="597" alt="image" src="https://github.com/user-attachments/assets/1b580b20-4023-4060-9613-b2378056eea7" />
+
 
 ### Select Images
 *(Add screenshot here)*
