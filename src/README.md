@@ -37,12 +37,17 @@ Built with **Vanilla JavaScript, HTML, CSS**, and powered by **[JSZip](https://s
 ## 📷 Screenshots
 
 ### Popup UI
-<img width="448" height="341" alt="image" src="https://github.com/user-attachments/assets/0075fd03-7644-447e-b7de-0930f942e771" />
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/0075fd03-7644-447e-b7de-0930f942e771" alt="extension preview features" width="300"/>
+</p>
+
 
 
 
 ### Select Images
-<img width="449" height="597" alt="image" src="https://github.com/user-attachments/assets/33432296-9ed4-4fbe-9d71-e0a5ee8eb431" />
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/33432296-9ed4-4fbe-9d71-e0a5ee8eb431" alt="extension preview features" width="300"/>
+</p>
 
 
 ### ZIP Download Example
