@@ -44,7 +44,7 @@ Built with **Vanilla JavaScript, HTML, CSS**, and powered by **[JSZip](https://s
 
 ### Select Images
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/33432296-9ed4-4fbe-9d71-e0a5ee8eb431" alt="extension preview features" width="00"/>
+  <img src="https://github.com/user-attachments/assets/33432296-9ed4-4fbe-9d71-e0a5ee8eb431" alt="extension preview features" width="400"/>
 </p>
 
 
