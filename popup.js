@@ -6,7 +6,6 @@ const root = document.documentElement;
 const savedTheme = localStorage.getItem("theme");
 if (savedTheme) {
   root.setAttribute("data-theme", savedTheme);
-
 } else {
   root.setAttribute("data-theme", "dark");
 }
@@ -16,7 +15,7 @@ toggleBtn.addEventListener("click", () => {
   const newTheme = currentTheme === "dark" ? "light" : "dark";
   root.setAttribute("data-theme", newTheme);
   localStorage.setItem("theme", newTheme);
-  toggleBtn.innerHTML = newTheme === "dark"? "light mode": "dark mode";
+  toggleBtn.innerHTML = newTheme === "dark" ? "light mode" : "dark mode";
 });
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -105,7 +104,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 <input type="checkbox" class="image-checkbox" data-index="${index}" checked>
                 <img src="${img.src}" alt="Image ${
         index + 1
-      }" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAiIGhlaWdodD0iNTAiIHZpZXdCb3g9IjAgMCA1MCA1MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjUwIiBoZWlnaHQ9IjUwIiBmaWxsPSIjZjVmNWY1Ii8+CjxwYXRoIGQ9Ik0xNSAxNUwzNSAzNU0xNSAzNUwzNSAxNSIgc3Ryb2tlPSIjY2NjIiBzdHJva2Utd2lkdGg9IjIiLz4KPHN2Zz4K'">
+      }" onerror="this.src='https://media.istockphoto.com/id/1147544807/vector/thumbnail-image-vector-graphic.jpg?s=612x612&w=0&k=20&c=rnCKVbdxqkjlcs3xH87-9gocETqpspHFXu5dIGB4wuM='">
                 <div class="image-info">
                     <div class="image-url">${
                       img.filename || `image_${index + 1}`
