@@ -3,22 +3,221 @@
   <head>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="/styles/index.css" />
+    <!-- <style>
+      .image-card {
+        position: relative;
+        border-radius: 12px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        border: 2px solid transparent;
+        margin: 10px;
+      }
+
+      .image-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+      }
+
+      .image-card.selected {
+        border-color: #3b82f6;
+        box-shadow: 0 0 0 1px #3b82f6, 0 8px 25px rgba(59, 130, 246, 0.2);
+      }
+
+      .image-container {
+        position: relative;
+        aspect-ratio: 16/10;
+        overflow: hidden;
+        background: #f1f5f9;
+      }
+
+      .image-preview {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+      }
+
+      .image-card:hover .image-preview {
+        transform: scale(1.05);
+      }
+
+      .checkbox-overlay {
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        z-index: 10;
+      }
+
+      .custom-checkbox {
+        appearance: none;
+        width: 24px;
+        height: 24px;
+        border: 2px solid white;
+        border-radius: 6px;
+        background: rgba(0, 0, 0, 0.3);
+        backdrop-filter: blur(4px);
+        cursor: pointer;
+        transition: all 0.2s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .custom-checkbox:checked {
+        background: #3b82f6;
+        border-color: #3b82f6;
+      }
+
+      .custom-checkbox:checked::after {
+        content: "✓";
+        color: white;
+        font-size: 14px;
+        font-weight: bold;
+      }
+
+      .custom-checkbox:hover {
+        transform: scale(1.1);
+      }
+
+      .image-info {
+        padding: 16px;
+      }
+
+      .image-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 8px;
+      }
+
+      .image-name {
+        font-weight: 600;
+        color: #1e293b;
+        font-size: 14px;
+        flex: 1;
+        margin-right: 8px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .extension-badge {
+        background: #e2e8f0;
+        color: #64748b;
+        font-size: 11px;
+        font-weight: 500;
+        padding: 2px 6px;
+        border-radius: 4px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      .image-details {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-size: 12px;
+        color: #64748b;
+      }
+
+      .detail-item {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+      }
+
+      .detail-icon {
+        width: 14px;
+        height: 14px;
+        opacity: 0.7;
+      }
+
+      .error-state {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        color: #94a3b8;
+        background: #f8fafc;
+      }
+
+      .error-icon {
+        width: 48px;
+        height: 48px;
+        margin-bottom: 8px;
+        opacity: 0.5;
+      }
+
+      .error-text {
+        font-size: 12px;
+        text-align: center;
+      }
+
+      .loading-state {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        background: #f8fafc;
+      }
+
+      .loading-spinner {
+        width: 24px;
+        height: 24px;
+        border: 2px solid #e2e8f0;
+        border-top: 2px solid #3b82f6;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      /* Demo container */
+      .demo-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .demo-title {
+        width: 100%;
+        text-align: center;
+        color: #1e293b;
+        font-size: 24px;
+        font-weight: 700;
+        margin-bottom: 20px;
+      }
+    </style> -->
   </head>
   <body>
-    <div class="header">
-      <img width="60" height="60" src="/assets/icon.svg" alt="" />
-      <h3>Image Downloader</h3>
-    </div>
+    <header>
+      <div class="logo">
+        <img width="30" height="30" src="/assets/icon.svg" alt="" />
+        <h3>Image Downloader</h3>
+      </div>
+      <button id="themeToggle">light mode</button>
+    </header>
 
-    <div class="filter-info">📷 Only shows: PNG, JPG, JPEG, WEBP images</div>
+    <div class="card">📷 Only shows: PNG, JPG, JPEG, WEBP images</div>
 
-    <div class="download-mode">
+    <div class="card">
       💾 Downloads as organized individual files with proper names
     </div>
 
     <div class="controls">
       <button id="scanBtn">Scan Images</button>
-      <button id="downloadAllBtn" disabled>Download All</button>
+      <button id="downloadAllBtn" class="secondaryBtn" disabled>Download All</button>
     </div>
 
     <div class="select-controls" style="display: none" id="selectControls">
@@ -29,7 +228,7 @@
       <button id="downloadSelectedBtn" disabled>Download Selected</button>
     </div>
 
-    <div class="stats" id="stats" style="display: none"></div>
+    <div class="status" id="status" style="display: none"></div>
 
     <div class="loading" id="loading">
       <p>🔍 Scanning for images...</p>
@@ -39,7 +238,7 @@
       <p id="progressText">Preparing download...</p>
     </div>
 
-    <div id="status">
+    <div class="card">
       Click "Scan Images" to find PNG, JPG, JPEG & WEBP images
     </div>
 

@@ -1,5 +1,24 @@
 let foundImages = [];
 
+const toggleBtn = document.getElementById("themeToggle");
+const root = document.documentElement;
+
+const savedTheme = localStorage.getItem("theme");
+if (savedTheme) {
+  root.setAttribute("data-theme", savedTheme);
+
+} else {
+  root.setAttribute("data-theme", "dark");
+}
+
+toggleBtn.addEventListener("click", () => {
+  const currentTheme = root.getAttribute("data-theme");
+  const newTheme = currentTheme === "dark" ? "light" : "dark";
+  root.setAttribute("data-theme", newTheme);
+  localStorage.setItem("theme", newTheme);
+  toggleBtn.innerHTML = newTheme === "dark"? "light mode": "dark mode";
+});
+
 document.addEventListener("DOMContentLoaded", function () {
   console.log("DOM loaded");
 
@@ -11,17 +30,15 @@ document.addEventListener("DOMContentLoaded", function () {
   const imageContainer = document.getElementById("imageContainer");
   const status = document.getElementById("status");
   const loading = document.getElementById("loading");
-  const stats = document.getElementById("stats");
   const downloadProgress = document.getElementById("downloadProgress");
   const progressText = document.getElementById("progressText");
 
   // Scan for images
   scanBtn.addEventListener("click", async function () {
     loading.classList.add("show");
-    status.style.display = "none";
     imageContainer.style.display = "none";
     selectControls.style.display = "none";
-    stats.style.display = "none";
+    status.style.display = "none";
 
     try {
       const [tab] = await chrome.tabs.query({
@@ -71,9 +88,8 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
-    stats.textContent = `Found ${foundImages.length} supported images`;
-    stats.style.display = "block";
-    status.style.display = "none";
+    status.textContent = `Found ${foundImages.length} supported images`;
+    status.style.display = "block";
     imageContainer.style.display = "block";
     selectControls.style.display = "flex";
 
@@ -164,7 +180,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         try {
           console.log(img.src, "source image:url");
-          debugger
+          debugger;
           const response = await fetch(img.src);
           if (response.ok) {
             const blob = await response.blob();
@@ -209,7 +225,7 @@ document.addEventListener("DOMContentLoaded", function () {
       a.click();
       document.body.removeChild(a);
       URL.revokeObjectURL(url);
-      debugger
+      debugger;
       progressText.textContent = `✅ Downloaded ${downloadedCount} images as ${zipFilename}`;
 
       // Hide progress after 3 seconds
@@ -236,6 +252,8 @@ function scanFilteredImages() {
 
   // Get all img elements
   const allImages = document.getElementsByTagName("img");
+
+  console.log(allImages);
 
   for (let i = 0; i < allImages.length; i++) {
     const img = allImages[i];
